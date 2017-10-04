@@ -1,7 +1,7 @@
 <?php 
 	function imprime_letras($tipo) {
 		for ($i = 'A'; $i != 'AA'; $i++) {
-			echo '<a class="btn-'.$tipo.'-letras" href="'.$tipo.'-letra-'.strtolower($i).'.php">'.$i.'</a>';
+			echo '<a class="btn-letras" href="'.$tipo.'-letra-'.strtolower($i).'.php">'.$i.'</a>';
 		    //<a class="btn-filosofos-letras" href="filosofos-letra-a">A</a>
 		}
 	}

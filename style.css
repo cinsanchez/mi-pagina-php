@@ -148,7 +148,7 @@
 	padding: 40px 150px;
 }
 
-.btn-filosofos-letras {
+.btn-letras {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 20px;
 	color: #2E9AFE;
@@ -163,33 +163,13 @@
 	border-radius: 4px;
 }
 
-.btn-filosofos-letras:hover {
+.btn-letras:hover {
 	background-color: #2E9AFE;
 	color: white;
 }
 
 .libros-letras {
 	padding: 40px 150px;
-}
-
-.btn-libros-letras {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 20px;
-	color: #2E9AFE;
-	margin: 3px;
-	display: inline-block;
-	padding: 6px 6px;
-	text-decoration: none;
-	text-align: center;
-	list-style: none;
-	border: 1px #2E9AFE solid;
-	float: left;
-	border-radius: 4px;
-}
-
-.btn-libros-letras:hover {
-	background-color: #2E9AFE;
-	color: white;
 }
 
 .lista-libros {
