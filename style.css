@@ -1,0 +1,239 @@
+*{
+	box-sizing: border-box;
+}
+
+.fondo-pagina {
+	background-position: top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.nav-barra {
+	display: block;
+	background: #7952b3;
+	font-family: 'Unica One', sans-serif;
+	border-radius: 10px;
+}
+
+.nav-barra li {
+	display: inline-block;
+	position: relative;
+	z-index: 1000;
+}
+
+.nav-barra li a {
+	font-weight: 100;
+	font-size: 20px;
+	text-decoration: none;
+	padding: 15px; 
+	display: block;
+	color: #FFFFFF;
+}
+
+.nav-barra li a:hover, .nav-barra li:hover > a {
+	color: #FFFFFF;
+	background: #9CA3DA;
+}
+
+.efemeride-dia {
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	padding: 8px;
+	line-height: 1.2;
+	margin: 5px 10px;
+	border: 2px #BDBDBD inset;
+	border-radius: 6px 10px
+
+}
+
+.efemerides-dia {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.imagen-frase {
+	width: 220px; 
+	height: 230px; 
+}
+
+.btn-jim-rohn {
+	display: inline-block;
+	border: 1px solid transparent;
+	border-color: #7952b3; 
+	border-radius: 5px; 
+	padding: .5rem 1rem;
+	text-align: center;
+	text-decoration: none;
+	font-family: 'Raleway', sans-serif;  
+}
+
+.btn-jim-rohn:hover {
+	background-color: #7952b3; 
+}
+
+.header-title {
+	font-family: 'Nunito', serif; 
+	background: #0080FF;
+	border: 5px #0080FF solid; 
+	border-radius: 10px; 
+
+	width: 100%;
+}
+
+.titles {
+	border: 15px #B40404 solid;
+	background: #B40404;
+	border-radius: 10px;
+	color: white;
+	width: 100%;
+}
+
+.second-title {
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+	background: #FA5858;
+	border: 10px #FA5858 solid; 
+	border-radius: 10px; 
+	width: 100%; 
+}
+
+.third-title {
+	font-family: 'Raleway', sans-serif;
+	font-size: 19px;
+}
+
+.fourth-title {
+	font-family: 'Raleway', sans-serif;
+	font-style: italic;
+}
+
+.frase-dia {
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	background: #F2F2F2;
+	border: 5px #F2F2F2 solid; 
+	border-radius: 10px; 
+	width: 100%; 
+}
+
+#column-1 {
+	width: 60%;
+	float: left;
+  	padding: 30px 70px;
+}
+
+#column-2 {
+	padding: 1px 80px;
+	width: 35%;
+	float:right;	  
+}
+
+.prologo {
+	font-family: 'Josefin Slab', sans-serif;
+	font-size: 19px;
+}
+
+.phrase {
+	width: 900px;
+	display: block;
+	font-family: 'Muli', sans-serif;
+	border: 3px #DF3A01 inset;
+	border-radius: 6px 10px; 
+	margin: 10px 220px;
+	text-align: center;
+	padding: 5px;
+	clear: left;
+}
+
+.filosofos-letras {
+	padding: 40px 150px;
+}
+
+.btn-filosofos-letras {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	color: #2E9AFE;
+	margin: 3px;
+	display: inline-block;
+	padding: 6px 6px;
+	text-decoration: none;
+	text-align: center;
+	list-style: none;
+	border: 1px #2E9AFE solid;
+	float: left;
+	border-radius: 4px;
+}
+
+.btn-filosofos-letras:hover {
+	background-color: #2E9AFE;
+	color: white;
+}
+
+.libros-letras {
+	padding: 40px 150px;
+}
+
+.btn-libros-letras {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+	color: #2E9AFE;
+	margin: 3px;
+	display: inline-block;
+	padding: 6px 6px;
+	text-decoration: none;
+	text-align: center;
+	list-style: none;
+	border: 1px #2E9AFE solid;
+	float: left;
+	border-radius: 4px;
+}
+
+.btn-libros-letras:hover {
+	background-color: #2E9AFE;
+	color: white;
+}
+
+.lista-libros {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.lista-filosofos {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.pie-pagina {
+	font-family: 'Unica One', sans-serif;
+	background: #424242;
+	font-size: 20px;
+	color: #FFFFFF; 
+	position: relative;
+	bottom: -1px;
+	margin-top: 80px;
+	width: 100%;
+	height: 60%;
+}
+
+.datos-personales li {
+	list-style-type: none;
+	text-decoration: none;
+	color: #FFFFFF; 
+	padding: 5px;
+	display: block;
+	padding: .5rem 1rem;
+	text-decoration: none;
+	font-family: 'Raleway', sans-serif; 
+	cursor:hand;
+}
+
+ul li:hover {
+	background-color: #7952b3;
+
+}
+
+.fin-pie-pagina {
+	text-align: center;
+}
+
+.datos-personales a {
+	text-decoration: none;
+	color: #FFFFFF; 
+}
