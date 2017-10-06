@@ -14,10 +14,6 @@
 	
 	<h2 class="second-title">Libros letra A</h2>
 
-	<ol class="lista-libros">		
-		<?php imprime_titulos_libros() ?>	
-	</ol>
-
 	<?php require 'footer.php';?>
 
 </body>

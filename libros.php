@@ -12,14 +12,14 @@
 
 	<?php require 'letras-libros.php';?>
 
-<?php
-	if (isset($_GET['letra'])) {
-		require 'libros_letra_a.php';
-	};
-
- ?>
-
 	<div style="clear:both"></div>
+	
+	<ol class="lista-libros">		
+		
+		<?php
+		$letra = $_GET['letra'];
+		imprime_titulos_libros($_GET['letra']); ?>	
+	</ol>
 	
 	<?php require 'footer.php';?>
 

@@ -6,8 +6,8 @@
 		}
 	}
 
-	function imprime_titulos_libros(){
-		$array = array(
+	function imprime_titulos_libros($letra) {
+		$libros_a = array(
 			0 => '<li><a href=a buen fin no hay mal principio.php>'.'<b>A buen fin no hay mal principio,</b>'.'William Shakespeare</a></li>',
 			1 => '<li><a href=""><b>A mi alma moribunda,</b>'.'Esteban Osorio</a></li>',
 			2 => '<li><a href=""><b>A orillas del río piedra me senté y lloré,</b>'.'Paulo Coelho</a></li>',
@@ -35,8 +35,10 @@
 			24 => '<li><a href=""><b>Azul ...,</b>'.'Rubén Dario </a></li>'
 		);
 
+		$array = ['a' => $libros_a];
+
 		for ($i=0; $i < 25; $i++) { 
-			echo($array[$i]);
+			echo($array[$letra][$i]);
 		}
 	}
 	
