@@ -11,9 +11,12 @@
 <body>
 	<?php require 'menu.php';?>
 	
-	<?php require 'letras-filosofos.php';?>
+	<?php require 'letras-filosofos.php';
+	?>
 
 	<div style="clear:both"></div>
+
+	
 
 	<?php require 'footer.php';?>
 </body>

@@ -1,0 +1,85 @@
+mysql> create database libreria;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use libreria;
+Database changed
+
+mysql> create table autor(
+    -> id_autor int primary key auto_increment,
+    -> nombre_autor varchar(200));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create table libros( id_libros int primary key auto_increment, nombre_libros varchar(300), epilogo varchar(1000), id_autor int,  foreign key (id_autor) references autor (id_autor));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from autor;                                                     +----------+---------------+
+| id_autor | nombre_autor  |
++----------+---------------+
+|        1 |               |
+|        2 |               |
+|        3 |               |
+|        4 |               |
+|        5 |               |
+|        6 | Paulo Coelho  |
++----------+---------------+
+6 rows in set (0.01 sec)
+
+mysql> CREATE TABLE frases( id_frase INT PRIMARY KEY AUTO_INCREMENT, frase_desc VARCHAR(3000), id_autor INT, id_libros INT, FOREIGN KEY (id_autor) REFERENCES autor (id_autor), FOREIGN KEY (id_libros) REFERENCES libros (id_libros));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> Insert into frases(frase_desc, id_autor)
+    -> Values ('Se valiente. Toma riesgos. Nada puede sustituir a la experiencia', 7);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM autor where id_autor =7;
++----------+--------------+
+| id_autor | nombre_autor |
++----------+--------------+
+|        7 | Paulo Coelho |
++----------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM frases where id_autor =7;
++----------+------------------------------------------------------------------+----------+-----------+
+| id_frase | frase_desc                                                       | id_autor | id_libros |
++----------+------------------------------------------------------------------+----------+-----------+
+|        1 | Se valiente. Toma riesgos. Nada puede sustituir a la experiencia |        7 |      NULL |
++----------+------------------------------------------------------------------+----------+-----------+
+1 row in set (0.00 sec)
+
+
+mysql> Insert into frases(frase_desc, id_autor) Values ('Esperar es doloroso. Olvidar es doloroso. Pero no saber qué hacer es el peor tipo de sufrimiento.', 7);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Insert into frases(frase_desc, id_autor) Values ('Cuando una persona desea realmente algo, todo el universo conspira para ayudar a esa persona a realizar su sueño.', 7);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Insert into frases(frase_desc, id_autor) Values ('Nadie puede mentir, nadie puede esconder nada, cuando se le mira directamente a los ojos.', 7);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> Insert into frases(frase_desc, id_autor) Values ('Tienes que tomar riesgos. Solo entendemos el miraglo de la vida cuando permitimos que pase lo inesperado.', 7);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> desc libros;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| id_libros     | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nombre_libros | varchar(300)  | YES  |     | NULL    |                |
+| epilogo       | varchar(1000) | YES  |     | NULL    |                |
+| id_autor      | int(11)       | YES  | MUL | NULL    |                |
++---------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Adulterio', 'Porque, a pesar de todo, es mejor no vivir que no amar. Una mujer. Un secreto. Una pasión inesperada que trastoca su vida y sus valores. A sus 31 años, linda tiene todo aquello que muchos sueñan y pocos logran conseguir: una vida perfecta. Un marido que la ama, unos hijos adorables, una exitosa carrera como periodista y una hermosa casa en ginebra, suiza. Y de pronto, sin previo aviso, su vida se pinta de sombras y comienza a temer que nada se transforme, o que todo cambie de improviso. Es en este momento cuando reencuentra a Jacob, su antiguo amor de la escuela, que irrumpe en su vida para sacarla de su letargo y hacerla sentir de nuevo esa pasión que creía olvidada. Atenazada entre la culpa y el placer, ella tendrá que encontrar su propia redención.', 7);
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values
+    -> ('No todo el mundo necesita ser feliz todo el tiempo. De hecho, nadie en este mundo puede. Hay que aprender a lidiar con la realidad de la vida.', 7, 1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+
+

@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Está es mi prueba de fuego</title>
+	<title>El monje que vendió su Ferrari</title>
 
 	<?php require 'links.php';?>
 
 </head>
 <body>
-	<?php require 'menu.php'; ?>
-
-	<?php require 'letras-libros.php';?>
+	<?php require 'menu.php';
+		  require 'letras-libros.php';?>
 
 	<p class="titles"> 
 		<b class="third-title">Libro:</b>
@@ -85,9 +84,7 @@
 
 	</div>
 
-	<div id="column-2" class="imagen-prologo">
-		<img src="image_1165_1_91289.jpg">
-	</div>
+
 
 	<div style="clear:both"></div>
 
