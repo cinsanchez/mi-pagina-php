@@ -82,4 +82,96 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql>
 
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('La química secreta de los encuentros', 'El hombre más importante de tu vida acaba de pasar por detrás de ti. Para encontrarlo deberás hacer un largo viaje y localizar a las seis personas que te conducirán hasta él. Hay dos vidas en ti, Alice, la que conoces y la que te espera desde hace tiempo. Divertida, original, encantadora y maravillosa, La química secreta de los encuentros te cautivará y, sobre todo, te hará feliz.', 21);
+Query OK, 1 row affected (0.02 sec)
+
+
+mysql> desc frases;
++------------+---------------+------+-----+---------+----------------+
+| Field      | Type          | Null | Key | Default | Extra          |
++------------+---------------+------+-----+---------+----------------+
+| id_frase   | int(11)       | NO   | PRI | NULL    | auto_increment |
+| frase_desc | varchar(3000) | YES  |     | NULL    |                |
+| id_autor   | int(11)       | YES  | MUL | NULL    |                |
+| id_libros  | int(11)       | YES  | MUL | NULL    |                |
++------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Porque ver sufrir a mi madre me hizo comprender que, para un hombre, amar es recoger la belleza de una mujer, ponerla bajo llave para que ella se sienta bajo su protección, y quererla... hasta que el tiempo la marchite.', 21, 1);
+Query OK, 1 row affected (0.00 sec)
+
+NO CAMBIO NADA EN ESTE UPDATE 
+mysql> update frases set id_libros = 1 where id_frase = 7;
+Query OK, 0 rows affected (0.01 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql> update frases set id_libros = 2 where id_frase = 7;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from autor;
++----------+-------------------------+
+| id_autor | nombre_autor            |
++----------+-------------------------+
+|        1 |                         |
+|        2 |                         |
+|        3 |                         |
+|        4 |                         |
+|        5 |                         |
+|        7 | Paulo Coelho            |
+|        8 | William Shakespeare     |
+|        9 | Esteban Osorio          |
+|       10 | Rubén Dario             |
+|       11 | Lewis Carroll           |
+|       12 | Frank Fernandez         |
+|       13 | José Julián de Martí    |
+|       14 | Conde León Tolstoi      |
+|       15 | Elizabeth Tornelli      |
+|       16 | Sófocles                |
+|       17 | Henry W.                |
+|       18 | Francois Auguste        |
+|       19 | Alicia Silvia           |
+|       20 | Anónimo                 |
+|       21 | Marc Levy               |
+|       22 | Confucio                |
+|       23 | Goethe                  |
+|       24 | Benjamin Franklin       |
+|       25 | Dante Aligheri          |
+|       26 | Immanuel Kant           |
+|       27 | Karl Max                |
+|       28 | Noam Chomsky            |
+|       29 | Tales                   |
+|       30 | Zig Ziglar              |
+|       31 | Oscar Wilde             |
++----------+-------------------------+
+30 rows in set (0.00 sec)
+
+mysql> update autor set nombre_autor = 'Haruki Murakami' where id_autor = 5;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+
+mysql> update autor set nombre_autor = 'Haruki Murakami' where id_autor = 5;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update autor set nombre_autor = 'Franz Kafka' where id_autor = 4;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update autor set nombre_autor = 'John Green' where id_autor = 3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update autor set nombre_autor = 'Raquel Palacio' where id_autor = 2;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update autor set nombre_autor = 'Mark Twain' where id_autor = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+
 
