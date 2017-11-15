@@ -17,26 +17,27 @@
 
 	<p class="titles"> 
 		<b class="third-title">Filosofo: </b>
-		<span class="fourth-title"</span>
+
+	<?php 	
+		imprime_titulo_autor();
+	 ?>
+
 	</p>
 
 	<?php
-		 $id_filosofo = 1;
-		 $id_filosofo = $_GET['id'];
-
+		imprime_frase_libro();
 		
-		if (isset($_GET['id'])) {
-			
-			$query = "SELECT frase_desc FROM Frases where id_autor ='$id_filosofo'";
-			$result = mysqli_query($conexion, $query);
+	?>
+	
+		<p class="titles"> 
+			<b class="third-title">Libros</b>
+		</p>
 
-			while ($row = mysqli_fetch_array($result)) {
-				echo '<div class="phrase">'.$row["frase_desc"].'</div>';
-			}
-			mysqli_free_result($result);
-		}
-
+	<?php
+		imprime_imagen_libro();
 	 ?>
+
+	<?php require 'footer.php'; ?>
 
 </body>
 </html>

@@ -16,24 +16,17 @@
 
 	<p class="titles">
 		<b class="third-title">Libro: </b>
-		<span class="fourth-title"</span>""
+	
+	<?php 	
+		nombre_libro();
+	 ?>
+		
 	</p>
 	
 	<?php 
-		$letra = 'a';
-
-		if (isset($_GET['id'])) {
-			$id_libro = $_GET['id'];
-			$query = "SELECT frase_desc FROM frases WHERE id_libros = '$id_libro'";
-			$result = mysqli_query($conexion, $query);
-		
-			while ($row = mysqli_fetch_array($result)) {
-				echo '<div class="phrase">'.$row["frase_desc"].'</div>';
-			}
-			mysqli_free_result($result);
-		}
-
-
+		imprime_frase_idlibro();
+		require 'prologos.php';
+		imprime_prologo_libro();
 	 ?>
 
 </body>

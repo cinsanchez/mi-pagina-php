@@ -175,3 +175,256 @@ Rows matched: 1  Changed: 1  Warnings: 0
 mysql>
 
 
+mysql> CREATE TABLE imagen (
+    -> id_imagen INT PRIMARY KEY AUTO_INCREMENT,
+    -> imagen_url TEXT,
+    -> id_autor INT,
+    -> FOREIGN KEY (id_autor) REFERENCES autor (id_autor));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into imagen (imagen_url, id_autor) values ('https://imagessl7.casadellibro.com/a/l/t0/37/9788408006237.jpg', 21);
+Query OK, 1 row affected (0.02 sec)
+
+mysql>
+
+mysql> desc libros;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| id_libros     | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nombre_libros | varchar(300)  | YES  |     | NULL    |                |
+| epilogo       | varchar(1000) | YES  |     | NULL    |                |
+| id_autor      | int(11)       | YES  | MUL | NULL    |                |
++---------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Bajo la misma estrella', 'Emotiva, irónica y afilada. Una novela teñida de humor y de tragedia que habla de nuestra capacidad para soñar incluso en las circunstancias más difíciles. Hazel acaba de cumplir 16 años. Y tiene cáncer. A pesar de que un tratamiento ha conseguido reducir su tumor de forma casi milagrosa, es una enferma terminal. Los médicos no pueden decirle cuánto tiempo le queda; solo sabe que debe vivir pegada a un tanque de oxígeno y sometida a continuos tratamientos. Desde hace unas semanas, Hazel forma parte de un grupo de apoyo donde otros chicos como ella comparten sus experiencias. En realidad, ella acude más por obligación que por voluntad; ¿qué sentido tiene hablar con otras personas de lo que nadie puede cambiar? Pero su vida da un verdadero vuelco cuando conoce a Gus Waters, un chico que, como ella, lucha por superar el cáncer. Una historia que explora cuán exquisita, inesperada y trágica puede ser la aventura de saberse vivo y querer a alguien.', 3);
+Query OK, 1 row affected (0.01 sec)
+
+
+mysql> INSERT INTO libros (nombre_libros, epilogo, id_autor) VALUES ('Ciudades de papel', 'En su último año de instituto, quintín no ha aprobado ni en popularidad ni en asuntos del corazón... Pero todo cambia cuando su vecina, la legendaria, inalcanzable y enigmática margo Roth Spiegelman, se presenta en mitad de la noche para proponerle que le acompañe en un plan de venganza inaudito. Después de una intensa noche que reaviva el vínculo de una infancia compartida y parece sellar un nuevo destino para ambos, margo desaparece dejando tras de sí un extraño cerco de pistas. Con un estilo único que combina humor y sensibilidad, John Green, el autor de bajo la misma estrella, teje una emotiva historia a la que da vida un inolvidable elenco de personajes. Ganadora del prestigioso premio Edgar, ciudades de papel aborda los temas de la amistad, el amor y la identidad para plantearnos una pregunta: ¿vemos en los demás, y en nosotros mismos, solo aquello que queremos ver?', 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into autor (nombre_autor) values ('Robin Sharma');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('El monje que vendió su Ferrari', 'Uno de los autores más leídos en todo el mundo nos ofrece la historia imponente de Jonathan y de cómo aprende a vivir de verdad. Jonathan Landry está cada vez más agobiado por su trabajo y por su matrimonio fracasado. Un día su madre le pide que se reúna urgentemente con su tío, Julian Mantle, a quien casi no conoce. Hace años, Julian, un abogado de gran éxito, decidió vender todas sus posesiones, incluido su flamante Ferrari, y se refugió en un monasterio del Himalaya. Ahora Julian necesita la ayuda de Jonathan. Las cartas secretas del monje que vendió su Ferrari descubren revelaciones sobre cómo recuperar tu poder personal y entregarte sin miedo a tus sueños.', 32);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) VALUES ('Ella y él', 'Irresistible, deliciosa y totalmente imprevisible. El gran retorno de Marc Levy a la comediaromántica.Una web de contactos los ha unido, pero no se hacen amantes, sino amigos. Y su idea es quedarseahí...Ella es actriz. Él, escritor.Ella se llama Mia. Él, Paul.Ella es inglesa. Él, estadounidense.Ella se esconde en Montmartre. Él vive en el Marais.Ella tiene mucho éxito. Él, no tanto.Ella es una estrella. Pero él no lo sabe.Ella se siente sola. Él, también.Ella mete la pata constantemente. Él la hace reír.Ella no debe enamorarse. Él, tampoco.', 21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('El primer día', 'Una preciosa historia de amor que habla del encuentro entre una arqueóloga que busca al primer hombre, y un astrólogo que busca la primera estrella.
+    '>
+    '> Un misterioso objeto se encuentra en un volcán inactivo cambiará para siempre la vida de Adrian y Keira. Juntos se embarcan en una aventura extraordinaria, que les lleva desde las orillas del lago Turkana en el corazón de África a las montañas de China. Tratan de revelar los secretos ocultos del objeto y responder a la vieja pregunta: ¿cómo empezó la vida?', 21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('La primera noche', '¿Dónde empieza el alba? ¿Dónde se acaba el día? ¿Por qué millones de estrellas iluminan la bóveda celeste sin que nosotros podamos ver o conocer los mundos a los que pertenecen? ¿Cómo empezó todo? Mi nombre es Adrian, soy astrofísico, especializado en las estrellas extrasolares. La humildad más sincera para un científico es aceptar que nada es imposible. Hoy comprendo lo lejos que estaba de esta humildad hasta la noche en que conocí a Keira. Juntos, viajamos hasta los rincones más alejados del planeta para intentar descifrar los misterios del nacimiento del mundo, pero cuando Keira despareció mi mundo se apagó, me encerré en mí mismo, seguro de que nunca volvería a ser feliz. Hoy, un misterioso mensaje me ha devuelto la esperanza...', 21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Las cosas que no nos dijimos', 'Cuatro días antes de su boda, Julia recibe una llamada del secretario personal de Anthony Walsh, su padre. Walsh es un brillante hombre de negocios, pero siempre ha sido para Julia un padre ausente, y ahora llevan más de un año sin verse. Como Julia imaginaba, su padre no podrá asistir a la boda. Pero esta vez tiene una excusa incontestable: su padre ha muerto.', 21);
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Si pudiera volver atrás', '«Su sastre le dijo un día que la vida no era como uno de esos aparatos en los que bastaba con pulsar un botón para rebobinar hasta el fragmento elegido, que no se podía volver atrás. Aparentemente, el señor Zanetti se equivocaba. Alguien, en algún lugar, debía de haber pulsado un extraño botón, pues la vida de Andrew Stilman acababa de rebobinarse hasta sesenta y dos días atrás.»
+    '> ¿Quién no ha querido cambiar el curso de las cosas alguna vez? Si pudieras retroceder en el tiempo: ¿Serías capaz de dejarlo todo para emprender una aventura en busca de tu destino? ¿Callarías ese secreto que revelaste sin querer? ¿Acudirías a aquella cita a ciegas con un desconocido que podría haber sido tu alma gemela? ¿Conﬁarías en las mismas personas?
+    '> Nuestra vida se construye a partir de las decisiones que tomamos, ¿qué harías si tuvieras otra oportunidad?', 21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('La mirada de una mujer: Lo que no te digo cuando me miras', 'Cuando Susan decide separarse de Philip para irse a honduras junto a los más necesitados, su relación empieza a flaquear. A pesar de las cartas que se escriben y de los profundos sentimientos que los unen, la distancia física termina por apartar también sus corazones. Un día, el pasado vuelve a encontrarlos, encarnado en una niña de once años. En ese momento, Philip y Susan deberán demostrar que aún se tienen el uno al otro, y que el suyo fue y sigue siendo un gran amor.', 21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Volver a verte', 'Arthur, un joven arquitecto californiano, vuelve a los ángeles después de pasar una larga temporada en parís. Sin embargo, durante todo este tiempo no ha conseguido olvidar a Lauren, el gran amor de su vida que le robó el corazón cuando, a raíz de un accidente, cayó en estado de coma. Gracias a la insistencia y la valentía de Arthur, Lauren siguió viviendo, a pesar de la opinión del doctor y de la madre de desenchufar los aparatos que la mantenían con vida. Éstos, avergonzados, le hicieron jurar que jamás confesaría la verdad a la joven, que no recuerda nada de aquellos meses. Arthur cumple su palabra, desaparece de su vida e intenta olvidarla. Cuando vuelve a los ángeles el destino hará que se reencuentren.', 21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('El pequeño ladrón de sombras', 'El protagonista de El pequeño ladrón de sombras es un niño, sin nombre, que vive sólo con su madre en un pequeño pueblo de Francia hasta que un día descubre que tiene un don: nuestro protagonista puede hablar con las sombras y a través de ellas descubrir los miedos y sueños de la gente... un don que le puede ayudar a ayudar a los demás y también a sí mismo… ', 21);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into autor (nombre_autor) values ('Nicholas Sparks');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Un paseo para recordar', 'Una de las novelas más emblemáticas de Nicholas SparksCada mes de abril, cuando la brisa marina se mezcla con el aroma de las lilas, Landon Carter recuerda su último año en el instituto Beaufort. Era 1958 y Landon ya había tenido una o dos novias. Juraba, incluso, que ya se había enamorado.Y es entonces cuando Jamie Sullivan, la hija del pastor baptista del pueblo, entra en su vida. Jamie era una chica callada, que cuidaba de su padre viudo, rescataba animales abandonados y era voluntaria en el orfanato. Ningún chico la había invitado a salir. Landon nunca hubiera imaginado que él fuera a hacerlo. Sin embargo, un giro del destino hizo que Jamie se convirtiera en la pareja de Landon para el baile. Y desde ese momento, la vida del chico cambiaría para siempre.', 33);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Diario de una pasión', 'En 1946 en carolina del norte, la población está despertando de la pesadilla de la guerra. Allí vuelve Noah Calhoun, de 31 años, para intentar que la plantación de la que procede vuelva a su antigua gloria, pero las imágenes de la preciosa joven que conoció catorce años atrás no paran de perseguirle. A pesar de que no ha sido capaz de encontrarla, tampoco ha conseguido olvidarla. Es entonces cuando, de manera inesperada, vuelve a dar con ella. Allie Nelson, de 29 años, está comprometida con otro hombre, pero reconoce que la pasión que una vez sintió por Noah no ha disminuido ni un ápice con el paso del tiempo. Allie se ve obligada a enfrentarse a sus esperanzas y sueños para el futuro con su boda a tan sólo unas semanas de suceder.', 33);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('El viaje más largo', 'Dos parejas cuyas historias de amor se cruzan de la manera más sorprendente. Un hombre de noventa años se encuentra solo en una carretera nevada después de haber tenido un accidente en un paraje aislado. Consciente a ratos y en espera de que lo rescaten, aparece ante él el amor de su vida, quien murió hace tiempo. En el espacio que separa la realidad y la imaginación, recuerdan su vida juntos: cómo superaron el trauma de no poder tener hijos; cuando se convirtieron en coleccionistas de arte reconocidos; el dolor que supuso la muerte de ella. La otra historia de amor se da entre una joven estudiante de arte y un cowboy. A pesar de proceder de ambientes totalmente dispares, se enamoran perdidamente. Ambos tienen ambiciones y sueños que cumplir pero él, además, se enfrenta a una cruel disyuntiva: o pone en peligro su vida al seguir compitiendo en el circuito de los toros o se arriesga a perder la granja de su familia.', 33);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('En nombre del amor', 'Un hombre se debate ante la decisión más importante de su vida... Travis Parker tiene todo lo que un hombre pueda desear: un buen trabajo como veterinario, amigos fieles e, incluso, una casa delante de un lago en una pequeña localidad de carolina del norte. Le gusta la vida y aprovecharla al máximo, pero hay algo que se resiste a probar: enamorarse. Pero semejante propósito se desvanece por completo en el momento que aparece en su vida Gabby Holland. Gabby es una asistente pediátrica que se acaba de mudar al barrio de Travis. Él ha intentado ser un buen vecino, invitarla a sus barbacoas y a pasar el día con sus amigos en su lancha, pero ella ha resistido cada uno de los intentos de su guapísimo y encantador vecino, en parte porque le sería demasiado fácil sentirse atraída por él.', 33);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Lo mejor de mi', 'Todo el mundo quería creer que el amor eterno era posible. Ella también lo creyó una vez, cuando tenía dieciocho años... Por el autor de Diario de una pasión. Durante la primavera de 1984, cuando todavía iban al instituto, Amanda Collier y Dawson Cole se enamoraron para siempre. Aunque pertenecían a estratos sociales muy diferentes, el amor que sentían el uno por el otro parecía capaz de desafiar cualquier impedimento. Pero el verano después de su graduación una serie de acontecimientos imprevistos los separó. Ahora, transcurridos veinticinco años, Amanda y Dawson tienen que volver a verse para el funeral de Tuck Hostetler, el mentor que encubrió y protegió su historia de amor adolescente. Ninguno lleva la vida que imaginó... y ninguno de los dos ha podido olvidar el apasionado primer amor que cambió sus vidas para siempre.', 33);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+
+mysql> insert into autor (nombre_autor) values ('Gabriel García Márquez');
+Query OK, 1 row affected (0.00 sec)
+
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Romeo y Julieta', 'La historia de Romeo y Julieta tiene antecedentes en la mitología y literatura griegas y en algunas leyendas medievales. Durante los siglos XV y XVI fue objeto de múltiples versiones, pero fue Shakespeare quien le infundió una pasión y un dramatismo inéditos hasta entonces y que han contribuido a mantener la leyenda en la memoria colectiva. En Verona, dos jóvenes enamorados, de dos familias enemigas, son víctimas de una situación de odio y violencia que ni desean ni pueden remediar. En una de esas tardes de verano en que el calor <>, Romeo, recién casado en secreto con su amada Julieta, mata al primo de ésta. A partir de ahí Shakespeare desencadena la tragedia y precipita los acontecimientos, guiados por el azar y la fatalidad. Ángel-Luis Pujante destaca en esta edición la fuerza poética y retórica de ROMEO Y JULIETA: los juegos de palabras, la coexistencia de prosa y verso, de lo culto y lo coloquial, de lo lírico y lo dramático contribuyen a intensificar los contrastes de la acción.', 8);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Macbeth', 'Este libro cuenta una historia de crimen y castigo entreverada de brujería y elementos sobrenaturales. Amparado en las engañosas profecías de las Hermanas Fatídicas, brujas o diosas del destino, Macbeth decide asesinar a su rey y tomar la corona. Consciente del horror al que se entrega, forja su terrible destino y se deja poseer por el mal que nace del ansia de poder, creyéndose invencible y eterno. Esta obra tenebrosa e inquietante, de acción vertiginosa, es también profundamente introspectiva. A través de un lenguaje metafórico y sensorial, la obra indaga en lo prohibido, explora la transgresión y ofrece la oportunidad única de compartir la vida interior de un asesino, con su horror y su misterio.', 8);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Hamlet', 'Obra en la que el genio de William Shakespeare (1564-1616) brilla con especial fuerza, la tragedia de Hamlet traza el admirable retrato de un legendario príncipe de Dinamarca soñador y contemplativo, sumido en dudas e irresoluciones, que, obligado a esclarecer los motivos que llevaron a la muerte de su padre, sucumbe ante la fatalidad de las circunstancias. Poblada, como señala en su prólogo Vicente Molina Foix, por una abundante y compleja galería de personajes secundarios, la obra ha gozado de una constante vigencia a lo largo del tiempo, que ha hecho que se incorporen al lenguaje común numerosas expresiones de la obra (-ser o no ser-, -palabras, palabras, palabras-, -lo demás es silencio-) que han llegado a hacerse emblemáticas. La ambigüedad, la ambivalencia y la desorientación del protagonista lo aproximan notablemente, por otro lado, a la sensibilidad de nuestra época.', 8);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Cien años de soledad', 'Muchos años después, frente al pelotón de fusilamiento, el coronel Aureliano Buendía había de recordar aquella tarde remota en que su padre lo llevó a conocer el hielo. Macondo era entonces una aldea de veinte casas de barro y caña brava construidas a la orilla de un río de aguas diáfanas que se precipitaban por un lecho de piedras pulidas, blancas y enormes como huevos prehistóricos. El mundo era tan reciente, que muchas cosas carecían de nombre, y para mencionarlas había que señalarlas con el dedo. Mito por derecho propio, saludada por sus lectores como la obra en español más importante después de la Biblia, Cien años de soledad cuenta la saga de la familia Buendía y su maldición, que castiga el matrimonio entre parientes dándoles hijos con cola de cerdo.', 33);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('El amor en los tiempos de cólera', 'Florentino Ariza no había dejado de pensar en ella un solo instante después de que Fermina Daza lo rechazó sin apelación después de unos amores largos y contrariados, y habían transcurrido desde entonces cincuenta y un años, nueve meses y cuatro días. Ambientada entre 1880 y los años treinta en una ciudad portuaria innombrada pero que se ha identificado con la legendaria Cartagena colombiana, donde Gabriel García Márquez escribiera sus primeros textos, la apasionada historia que aquí se cuenta está entre las más recordadas de la literatura contemporánea. En una sociedad enfrentada entre el convencionalismo y la vanguardia, la costumbre y el progreso científico, el romance de Florentino Ariza y Fermina Daza está destinado a permanecer en la memoria de sus lectores en un tiempo idílico.', 33);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Kafka en la orilla', 'Kafka Tamura se va de casa el día en que cumple quince años. Le llevan a ello las malas relaciones con su padre un famoso escultor convencido de que su hijo repetirá el aciago sino de Edipo y el vacío producido por la ausencia de su madre; se dirigirá al sur del país, donde encontrará refugio en una peculiar biblioteca y conocerá a la misteriosa señora Saeki. Sus pasos se cruzan con los de otro personaje, Satoru Nakata, sobre quien se ha abatido la tragedia: de niño, durante la segunda guerra mundial, sufrió un accidente del que salió con secuelas y dificultades para comunicarse... Salvo con los gatos.', 5);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('La metamorfosis', 'Es la primera obra extensa de Kafka, los acontecimientos ocurren en un ambiente pequeño Burgues, entre gente que desea dominar pero a la vez es esclava de las preocupaciones del empleo y la ganancia. Aunque la narración tiene detalles realistas, los acontecimientos están más allá del tiempo y del espacio, pero esto hace que la obra tenga infinidad de interpretaciones simbólicas, dando la posibilidad de múltiples lecturas del texto.', 4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Poesía', 'Mientras que la narrativa de Rubén Darío (1867-1916) -de la que ?Cuentos fantásticos?, también publicado en esta colección, es una excelente muestra- renovó la prosa castellana de su tiempo, su poesía ejerció una influencia todavía mayor sobre la lírica. Al Rubén musical, colorista y exótico, cantor de los cisnes y las princesas, se contrapone ese otro Rubén que descubriera Pedro Salinas, cargado de una intensa tristeza y de hondas preocupaciones sobre el ser y la razón de lo humano. El presente volumen antológico está preparado y prologado por Jorge Campos y anotado por Arturo Ramoneda. Otras obras de Rubén Darío en esta colección: Prosas profanas, Cantos de vida y esperanza, y Azul', 10);
+Query OK, 1 row affected (0.00 sec)
+
++-----------+-----------------------------------------------------------+
+| id_libros | nombre_libros                                             |
++-----------+-----------------------------------------------------------+
+|         1 | Adulterio                                                 |
+|         2 | La química secreta de los encuentros                      |
+|         3 | Bajo la misma estrella                                    |
+|         4 | Ciudades de papel                                         |
+|         5 | El monje que vendió su Ferrari                            |
+|         6 | Ella y él                                                 |
+|         7 | El primer día                                             |
+|         8 | La primera noche                                          |
+|         9 | Las cosas que no nos dijimos                              |
+|        10 | Si pudiera volver atrás                                   |
+|        11 | La mirada de una mujer: Lo que no te digo cuando me miras |
+|        12 | Volver a verte                                            |
+|        13 | El pequeño ladrón de sombras                              |
+|        14 | Un paseo para recordar                                    |
+|        15 | Diario de una pasión                                      |
+|        16 | El viaje más largo                                        |
+|        17 | En nombre del amor                                        |
+|        18 | Lo mejor de mi                                            |
+|        19 | Romeo y Julieta                                           |
+|        20 | Macbeth                                                   |
+|        21 | Hamlet                                                    |
+|        22 | Cien años de soledad                                      |
+|        23 | El amor en los tiempos de cólera                          |
+|        24 | Kafka en la orilla                                        |
+|        25 | La metamorfosis                                           |
+|        26 | Poesía                                                    |
++-----------+-----------------------------------------------------------+
+26 rows in set (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Once minutos', 'Había una vez una prostituta llamada Maria. Como un cuento de hadas contando para adultos, así comienza la novela sobre lo sublime Once Minutos que conmovió al mundo. Me costó mucho aprender que el encuentro carnal de dos cuerpos es más que una simple respuesta a estímulos físicos o al instinto de perpetuación de la especia. En verdad, lleva consigo toda la carga cultural del hombre y de la humanidad. Once minutos no pretende ser un manual o un tratado sobre el hombre y ola mujer frente al mundo aún desconocido de la relación sexual. Es un análisis de mi propio recorrido, sin pretender en ningún momento, juzgar aquello que viví; buscaba descubrí si había tenido el valor de aprender toso lo que la vida me enseño sobre ello. Paulo Coelho', 7);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into libros (nombre_libros, epilogo, id_autor) values ('Libro de los Ritos', 'El Libro de los Ritos o Clásico de los Ritos (Liji en chino) es uno de los cinco libros clásicos del confucianismo que toda persona culta debía conocer. Describía las normas sociales, los sistemas de gobierno y los ritos ceremoniales de la dinastía Zhou.', 22);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select id_libros, nombre_libros, id_autor from libros;
++-----------+-----------------------------------------------------------+----------+
+| id_libros | nombre_libros                                             | id_autor |
++-----------+-----------------------------------------------------------+----------+
+|         1 | Adulterio                                                 |        7 |
+|         2 | La química secreta de los encuentros                      |       21 |
+|         3 | Bajo la misma estrella                                    |        3 |
+|         4 | Ciudades de papel                                         |        3 |
+|         5 | El monje que vendió su Ferrari                            |       32 |
+|         6 | Ella y él                                                 |       21 |
+|         7 | El primer día                                             |       21 |
+|         8 | La primera noche                                          |       21 |
+|         9 | Las cosas que no nos dijimos                              |       21 |
+|        10 | Si pudiera volver atrás                                   |       21 |
+|        11 | La mirada de una mujer: Lo que no te digo cuando me miras |       21 |
+|        12 | Volver a verte                                            |       21 |
+|        13 | El pequeño ladrón de sombras                              |       21 |
+|        14 | Un paseo para recordar                                    |       33 |
+|        15 | Diario de una pasión                                      |       33 |
+|        16 | El viaje más largo                                        |       33 |
+|        17 | En nombre del amor                                        |       33 |
+|        18 | Lo mejor de mi                                            |       33 |
+|        19 | Romeo y Julieta                                           |        8 |
+|        20 | Macbeth                                                   |        8 |
+|        21 | Hamlet                                                    |        8 |
+|        22 | Cien años de soledad                                      |       33 |
+|        23 | El amor en los tiempos de cólera                          |       33 |
+|        24 | Kafka en la orilla                                        |        5 |
+|        25 | La metamorfosis                                           |        4 |
+|        26 | Poesía                                                    |       10 |
+|        27 | Once minutos                                              |        7 |
+|        28 | Libro de los Ritos                                        |       22 |
++-----------+-----------------------------------------------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('No elegimos nuestra vida, pero decidimos qué hacer con las alegrías y tristeza que recibimos', 7, 1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Confiar en quien se ama siempre da buenos resultados', 7, 1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('No hay mejor momento que el otoño para empezar a olvidar las cosas que nos incomodan. Dejar que se suelten de nosotros como hojas secas, pensar en volver a bailar, disfrutar de cada destello de un sol que todavía brilla, calentar el cuerpo y el espíritu con sus rayos, antes de que se vaya a dormir y se convierta sólo en una lámpara de luz tenue en el cielo', 7, 1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('La luz de tu alma es mayor que su oscuridad. Pero para descubrirlo tienes que ir hasta el final del juego', 7,1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libro) values ('Vivir es tomar decisiones y asumir las consecuencias.', 7, 1);
+ERROR 1054 (42S22): Unknown column 'id_libro' in 'field list'
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Vivir es tomar decisiones y asumir las consecuencias.', 7, 1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libro) values ('Es interesante luchar por un amor no correspondido.', 7, 1);
+ERROR 1054 (42S22): Unknown column 'id_libro' in 'field list'
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Es interesante luchar por un amor no correspondido.', 7, 1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Pero hay una cosa que quedará para siempre marcada en el alma del universo: mi amor. A pesar de los errores, de las decisiones que hicieron sufrir a los demás, de los momentos en los que pensé que no existía.', 7, 1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('El amor no es solo un sentimiento, es un arte. Y, como en cualquier arte, la inspiración solo no basta, también es necesario mucho trabajo.', 7, 1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('No hay mejor momento que el otoño para empezar a olvidar las cosas que nos molestan. Dejar que se suelten de nosotros como las hojas secas, pensar en volver a bailar, disfrutar de cada momento de sol, que todavía calienta, calentar el cuerpo y el espíritu con sus rayos, antes de que se vaya a dormir y se convierta en una débil bombilla en el cielo.', 7, 1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Yo no creía en el destino, ni en las pequeñas señales de la vida que supuestamente nos muestran qué camino tomar. No creía en las historias de videntes, ni en cartas que predicen el futuro. Creía en la simplicidad de las coincidencias, en la verdad del azar.', 21, 2);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('El hombre más importante de tu vida, el que buscas desde siempre sin saber ni siquiera que existe, ese hombre acaba de pasar hace apenas unos segundos detrás de ti.', 21, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Yo siempre he tenido pasión por los detalles, por los pequeños acontecimientos, casi invisibles, que hay a nuestro alrededor. Observar a la gente te enseña muchas cosas.', 21, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('El hombre del que te hablaba ayer se encuentra en alguna parte en el camino de esa otra vida, y nunca estará presente en la que llevas hoy. Ir a su encuentro te obligará a realizar un largo viaje. Un viaje en el curso del cual descubrirás que nada de todo aquello que creías ser era verdad.', 21, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Es maravillosamente humano tener miedo.', 21, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Te estás muriendo de soledad, sueñas con un gran amor y nada te da más miedo que enamorarte.', 21, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Después de todo, ¿no es el destino quien ha decidido que nuestras carreteras se cruzaran?', 21, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Para un hombre, amar es recoger la belleza de una mujer, ponerla bajo llave para que ella se sienta bajo su protección, y quererla... hasta que el tiempo la marchite.', 21, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Me hice la promesa de que si un día llegaba a amar, a amar realmente, entonces conservaría la flor y me prohibiría cortarla.', 21, 2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+
+
+

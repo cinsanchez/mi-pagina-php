@@ -19,29 +19,13 @@
 	</p>
 
 	<?php 
-		$result = mysqli_query($conexion, "SELECT frase_desc FROM frases WHERE id_libros = 1");
-
-		while ($row = mysqli_fetch_array($result)) {
-			echo '<div class="phrase">'.$row["frase_desc"].'</div>';
-		}
-		mysqli_free_result($result);
+		imprime_frase_libro();
 	 ?>
 
 	<?php 
 		require 'prologos.php';
 
-		$result = mysqli_query($conexion, "SELECT epilogo FROM libros WHERE id_libros = 1");
-
-		$row = mysqli_fetch_array($result);
-		foreach ($row as $autor) {
-			$epilogo = $row["epilogo"];
-		}
-			echo '<p>'.$epilogo.'</p>';
-
-		//while ($row = mysqli_fetch_array($result)) {
-		//	echo '<p>'.$row["epilogo"].'</p>';
-	//	}
-		//mysqli_free_result($result);
+		imprime_prologo_libro();
 	 ?>
 
 	</div>
