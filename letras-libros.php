@@ -3,7 +3,8 @@
 
 	<?php  	
 			imprime_letras('libros');
-			require 'conexion.php';	
+			//require 'conexion.php';	
+			
 	?>
 
 	<br>
@@ -11,7 +12,7 @@
 
 	<ol class="lista-libros">
 		<?php 
-			imprime_titulos_libros();
+			$database->titulos_libros_letra();
 		 ?>
 
 	</ol>

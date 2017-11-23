@@ -7,141 +7,71 @@
 		}
 	}
 
-	function imprime_nombre_autores(){
-		require 'conexion.php';
+	//function frase_aleatoria()
+	//{
+	//	require 'modelo.php';
+	//	$conexion = new BaseDatos($config);
+	//	$conexion->frase_del_dia($conexion);
+	//}
 
-		if(isset($_GET['letra'])) {
-		 	$letra =  $_GET['letra'];
-		 	$result = mysqli_query($conexion, "SELECT * FROM autor WHERE nombre_autor LIKE '$letra%'");
+	//function imprime_nombre_autores()
+	//{
+	//	require 'modelo.php';
+	//	$conexion = new BaseDatos($config);
+	//	$conexion->nombre_filosofos_autores($conexion);	
+	//}
 
-		 	//$row = mysqli_fetch_array($result);
-		 	//foreach ($row as $autor) {
-		 	//	$nombre = $row["nombre_autor"];
-			//} 
-			//echo '<li><a href="'.urlencode(strtolower($nombre)).'.php'.'">'.$nombre."</a></li>";
+	//function imprime_titulos_libros()
+	//{
+	//	require 'modelo.php';
+	//	$conexion = new BaseDatos($config);
+	//	$conexion->titulos_libros_letra($conexion);
+	//}
 
-			while ($row = mysqli_fetch_array($result)) {
-				$id_filosofo = $row["id_autor"];
-				$nombre = $row["nombre_autor"];
-				echo '<li><a href="filosofo.php?id='.$id_filosofo.'">'.$nombre."</a></li>";
-			}
-			mysqli_free_result($result);
-		}	
-	}
+	//function imprime_titulo_autor(){
+	//	require 'modelo.php';
+	//	$conexion = new BaseDatos($config);
+	//	$conexion->imprime_nombre_autor($conexion);	
+	//}
 
-	function imprime_titulos_libros(){
-		require 'conexion.php';
-		$letra = 'a';
-			
-			if (isset($_GET['letra'])) {
-				$letra = $_GET['letra'];
-				$result = mysqli_query($conexion, "SELECT * FROM libros WHERE nombre_libros LIKE '$letra%'");
+	//function nombre_libro(){
+		//require 'modelo.php';
+	//	$conexion = new BaseDatos($config);
+	//	$conexion->imprime_titulo_libros($conexion);
+	//}
 
-				while ($row = mysqli_fetch_array($result)) {
-					$id_libro = $row["id_libros"];
-					$nombre = $row["nombre_libros"];
-					echo '<li><a href="libro.php?id='.$id_libro.'">'.$nombre."</a></li>";
-				}
-			}
-	}
+	//function imprime_frase_libro(){
+		//require 'modelo.php';
+	//	$conexion = new BaseDatos($config);
+	//	$conexion->imprime_frases_autores($conexion);	
+	//}
 
-	function imprime_titulo_autor(){
-		require 'conexion.php';
+	//function imprime_frase_idlibro(){
+		//require 'modelo.php';
+	//	$conexion=new BaseDatos($config);
+	//	$conexion->imprime_frases_libros($conexion);
+	//}
 
-		if (isset($_GET['id'])) {
-			$id_autor = $_GET['id'];
-			$query = "SELECT nombre_autor FROM autor WHERE id_autor = '$id_autor'";
-			$result = mysqli_query($conexion, $query);
-		
-			while ($row = mysqli_fetch_array($result)) {
-				echo '<span class="fourth-title">'.$row["nombre_autor"].'</span>';
-			}
-			mysqli_free_result($result);
-		}
-	}
+	//function imprime_imagen_libro(){
+		//require 'modelo.php';
+	//	$conexion=new BaseDatos($config);
+	//	$conexion->imprime_imagen_libro_filosofo($conexion);
+		 //$id_filosofo = 1;
+		 //$id_filosofo = $_GET['id'];
+	//}
 
-	function nombre_libro(){
-		require 'conexion.php';
+	//function imprime_imagen_libro_frase(){
+		//require 'modelo.php';
+	//	$conexion=new BaseDatos($config);
+	//	$conexion->imprime_imagen_libro($conexion);
+		//$id_libro = $_GET['id'];
+	//}
 
-		if (isset($_GET['id'])) {
-			$id_libro = $_GET['id'];
-			$query = "SELECT nombre_libros FROM libros WHERE id_libros = '$id_libro'";
-			$result = mysqli_query($conexion, $query);
-		
-			while ($row = mysqli_fetch_array($result)) {
-				echo '<span class="fourth-title">'.$row["nombre_libros"].'</span>';
-			}
-			mysqli_free_result($result);
-		}
-	}
-
-	function imprime_frase_libro(){
-		require 'conexion.php';
-		$id_filosofo = 1;
-		$id_filosofo = $_GET['id'];
-
-		if (isset($_GET['id'])) {
-			
-			$query = "SELECT frase_desc FROM Frases where id_autor ='$id_filosofo'";
-			$result = mysqli_query($conexion, $query);
-
-			while ($row = mysqli_fetch_array($result)) {
-				echo '<div class="phrase">'.$row["frase_desc"].'</div>';
-			}
-			mysqli_free_result($result);
-		}
-	}
-
-	function imprime_frase_idlibro(){
-		require 'conexion.php';
-
-		$letra = 'a';
-
-		if (isset($_GET['id'])) {
-			$id_libro = $_GET['id'];
-			$query = "SELECT frase_desc FROM frases WHERE id_libros = '$id_libro'";
-			$result = mysqli_query($conexion, $query);
-		
-			while ($row = mysqli_fetch_array($result)) {
-				echo '<div class="phrase">'.$row["frase_desc"].'</div>';
-			}
-			mysqli_free_result($result);
-		}
-	}
-
-	function imprime_imagen_libro(){
-
-		require 'conexion.php';
-
-		 $id_filosofo = 1;
-		 $id_filosofo = $_GET['id'];
-
-		if (isset($_GET['id'])) {
-			
-			$query = "SELECT imagen_url FROM imagen where id_autor ='$id_filosofo'";
-			$result = mysqli_query($conexion, $query);
-
-			while ($row = mysqli_fetch_array($result)) {
-				echo '<div class="imagen-prologo"><img src='.$row["imagen_url"].' height="350" width="270"></div>';
-			}
-			mysqli_free_result($result);
-		}
-	}
-
-	function imprime_prologo_libro(){
-		require 'conexion.php';	
-
-		if (isset($_GET['id'])){
-			$id_libro = $_GET['id'];
-			$query = "SELECT epilogo FROM libros WHERE id_libros = '$id_libro'";
-			$result = mysqli_query($conexion, $query);
-
-			while ($row = mysqli_fetch_array($result)) {
-				echo '<p>'.$row["epilogo"].'</p>';
-			}
-			mysqli_free_result($result);
-		}
-	}	
+	//function imprime_prologo_libro(){
+		//require 'modelo.php';	
+	//	$conexion=new BaseDatos($config);
+	//	$conexion->imprime_prologo_libro($conexion);	
+	//}	
 
 
 	//function imprime_titulos_libros($letra) {

@@ -426,5 +426,254 @@ Query OK, 1 row affected (0.00 sec)
 
 mysql>
 
+mysql> insert into autor (nombre_autor) values ('Diana de Gales');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Hay infinitos más grandes que otros (...) Gus, amor mío, no puedo expresar lo mucho que te agradezco nuestro pequeño infinito. No lo cambiaría por el mundo entero. Me has dado una eternidad en esos días contados, y por eso te estaré siempre agradecida.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Todo el mundo debería tener un amor verdadero, y debería durar como mínimo toda la vida.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Estoy enamorado de ti, y no me apetece privarme del sencillo placer de decir la verdad. Estoy enamorado de ti y sé que el amor es sólo un grito al vacío, que es inevitable el olvido, que estamos todos condenados y que llegará el día en que todos nuestros esfuerzos volverán al polvo.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Sentí que me enamoraba de él como cuando sientes que estás quedándote dormida: primero lentamente, y de repente de golpe.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('El amor verdadero nace de los tiempos difíciles.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('¿Qué más? Es preciosa. No te cansas de mirarla. No tienes que preocuparte de si es más inteligente que tú, porque sabes que lo es. Es divertida sin pretenderlo siquiera. La quiero. Tengo la inmensa suerte de quererla.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('El mundo no es una fábrica de conceder deseos.', 3, 3);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Mis pensamientos son estrellas con las que no puedo formar constelaciones.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('¿Sabes? A veces la gente no entiende lo que promete cuando lo promete.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into frases (frase_desc, id_autor, id_libros) values ('Esta es tu vida, ¿de acuerdo? La única que tienes. Nos tienes a mí, a tu familia, este mundo y eso es todo. Y si eso no te basta, lo siento, pero no es poca cosa. Porque yo te amo. Y yo te voy a recordar.', 3, 3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> update frases set frase_desc = 'Todo el mundo debería tener un amor verdadero, y debería durar como mínimo toda la vida.' where id_frase = 27;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> INSERT INTO frases (frase_desc, id_autor, id_libros) VALUES
+    -> ('Supongo que a cada quien le corresponde su milagro.', 3, 4),
+    -> ('Nos miramos fijamente, cada uno desde su lado del cristal. Nuestras cabezas estaban a la misma altura. No recuerdo cómo acabó la historia, si me fui a la cama o se fue ella. En mi memoria no acaba. Seguimos todavía allí, mirándonos, para siempre.', 3, 4),
+    -> ('A Margo siempre le gustaron los misterios. Y teniendo en cuenta todo lo que sucedió después, nunca dejaré de pensar que quizá le gustaban tanto los misterios que se convirtió en uno.', 3, 4),
+    -> ('No tenían tiempo para pensar en el futuro. Pero luego las expectativas de vida empezaron a aumentar y la gente empezó a tener cada vez más futuro, así que pasaba más tiempo pensando en él. En el futuro. Y ahora la vida se ha convertido en el futuro. Vives cada instante de tu vida por el futuro…', 3, 4),
+    -> ('Siempre me ha parecido ridículo que la gente quiera estar con alguien solo porque es guapo. Es como elegir los cereales del desayuno por el color, no por el sabor.', 3, 4),
+    -> ('Te cuento lo que no me gusta: desde aquí no se ve el óxido, la pintura cayéndose y todo eso, pero ves lo que es realmente. Ves lo falso que es todo. Ni siquiera es duro como el plástico. Es una ciudad de papel.', 3, 4),
+    -> ('Yo boca arriba y ella de lado, pasándome un brazo por encima y con la cabeza apoyada en mi hombro, mirándome. No hacíamos nada. Simplemente estábamos tumbados juntos bajo el cielo.', 3, 4),
+    -> ('El placer era observar nuestros hilos cruzándose, separándose y volviéndose a juntar.', 3, 4),
+    -> ('Quizá era rara, o quizá los raros éramos los demás.', 3, 4),
+    -> ('Bueno, en algún momento dejarás de mirar el cielo, o uno de estos días mirarás hacia abajo y verás que también tú has salido volando.', 3, 4);
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> desc imagen;
++------------+---------+------+-----+---------+----------------+
+| Field      | Type    | Null | Key | Default | Extra          |
++------------+---------+------+-----+---------+----------------+
+| id_imagen  | int(11) | NO   | PRI | NULL    | auto_increment |
+| imagen_url | text    | YES  |     | NULL    |                |
+| id_autor   | int(11) | YES  | MUL | NULL    |                |
++------------+---------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> insert into imagen (imagen_url, id_autor) values ('https://www.google.cl/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiHiuHKpsHXAhUHiZAKHZf4BvkQjRwIBw&url=https%3A%2F%2Fwww.planetadelibros.com%2Flibro-adulterio%2F162030&psig=AOvVaw3KN3k0zpVB5uoYSeml-9zO&ust=1510860073604677', 7);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> update imagen set imagen_url = 'http://librosonlineparaleer.com/wp-content/uploads/2015/06/Adulterio-Paulo-Coelho.jpg' where id_imagen = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> ALTER TABLE libros
+    -> ADD id_imagen INT,
+    -> ADD CONSTRAINT FOREIGN KEY (id_imagen) REFERENCES imagen (id_imagen);
+Query OK, 28 rows affected (0.13 sec)
+Records: 28  Duplicates: 0  Warnings: 0
+
+
+mysql> select * from imagen;
++-----------+---------------------------------------------------------------------------------------+----------+
+| id_imagen | imagen_url                                                                            | id_autor |
++-----------+---------------------------------------------------------------------------------------+----------+
+|         1 | https://imagessl7.casadellibro.com/a/l/t0/37/9788408006237.jpg                        |       21 |
+|         2 | http://librosonlineparaleer.com/wp-content/uploads/2015/06/Adulterio-Paulo-Coelho.jpg |        7 |
++-----------+---------------------------------------------------------------------------------------+----------+
+2 rows in set (0.00 sec)
+
+mysql> UPDATE libros SET id_imagen = 2 WHERE id_libros = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE libros SET id_imagen = 1 WHERE id_libros = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> show create table libros;
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table  | Create Table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| libros | CREATE TABLE `libros` (
+  `id_libros` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_libros` varchar(300) DEFAULT NULL,
+  `epilogo` varchar(1000) DEFAULT NULL,
+  `id_autor` int(11) DEFAULT NULL,
+  `id_imagen` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_libros`),
+  KEY `id_autor` (`id_autor`),
+  KEY `id_imagen` (`id_imagen`),
+  CONSTRAINT `libros_ibfk_1` FOREIGN KEY (`id_autor`) REFERENCES `autor` (`id_autor`),
+  CONSTRAINT `libros_ibfk_2` FOREIGN KEY (`id_imagen`) REFERENCES `imagen` (`id_imagen`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.01 sec)
+
+mysql> ALTER TABLE libros
+    -> DROP FOREIGN KEY libros_ibfk_2;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE libros
+    -> DROP COLUMN id_imagen;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC libros;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| id_libros     | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nombre_libros | varchar(300)  | YES  |     | NULL    |                |
+| epilogo       | varchar(1000) | YES  |     | NULL    |                |
+| id_autor      | int(11)       | YES  | MUL | NULL    |                |
++---------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE imagen ADD COLUMN id_libros INT,  ADD CONSTRAINT FOREIGN KEY (id_libros) REFERENCES libros (id_libros);
+Query OK, 2 rows affected (0.08 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select id_imagen, id_libros from imagen;
++-----------+-----------+
+| id_imagen | id_libros |
++-----------+-----------+
+|         1 |      NULL |
+|         2 |      NULL |
++-----------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> UPDATE imagen SET id_libros = 2 where id_imagen = 1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE imagen SET id_libros = 1 where id_imagen = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> insert into imagen (imagen_url, id_autor, id_libros) values ('http://1.bp.blogspot.com/-7KJWcRXJFto/VXqRO-pXNgI/AAAAAAAAFIE/boEsaDZeIPs/s1600/Ciudades%2Bde%2Bpapel.jpg', 3, 4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO frases (frase_desc, id_autor, id_libros) VALUES
+    -> ('Supongo que a cada quien le corresponde su milagro.', 33, 22),
+    -> ('Lo esencial es no perder la orientación.', 33, 22),
+    -> ('Había perdido en la espera la fuerza de los muslos, la dureza de los senos, el hábito de la ternura, pero conservaba intacta la locura del corazón.', 33, 22),
+    -> ('Llegaron a sospechar que el amor podía ser un sentimiento más reposado y profundo que la felicidad desaforada pero momentánea de sus noches secretas.', 33, 22),
+    -> ('Se sintió olvidado, no con el olvido remediable del corazón, sino con otro olvido más cruel e irrevocable que él conocía muy bien, porque era el olvido de la muerte.', 33, 22),
+    -> ('Tenía la rara virtud de no existir por completo sino en el momento oportuno.', 33, 22),
+    -> ('Extraviado en la soledad de su inmenso poder, empezó a perder el rumbo', 33, 22),
+    -> ('El secreto de una buena vejez no es otra cosa que un pacto honrado con la soledad.', 33, 22),
+    -> ('Optaron por no volver al cine, considerando que ya tenían bastante con sus propias penas para llorar por fingidas desventuras de seres imaginarios.', 33, 22),
+    -> ('Uno no se muere cuando debe, sino cuando puede', 33, 22);
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> insert into imagen (imagen_url, id_autor, id_libros) values ('http://www.gandhi.com.mx/media/catalog/product/cache/1/image/370x/9df78eab33525d08d6e5fb8d27136e95/i/m/image_1165_1_276913.jpg', 33, 22);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> UPDATE libros SET id_autor = 34 where id_libros = 22;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE libros SET id_autor = 34 where id_libros = 23;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 46;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 47;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 48;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 49;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 50;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 51;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 52;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 53;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 54;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE frases SET id_autor = 34 where id_frase = 55;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>
+
+mysql> UPDATE imagen SET id_autor = 34 where id_imagen = 4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+
+
+
+-----------
+INSERT INTO frases (frase_desc, id_autor, id_libros) VALUES 
+('Así que no va a ser fácil. Va a ser muy difícil; vamos a tener que trabajar en esto todos los días, pero quiero hacerlo porque te quiero. Quiero todo lo que eres, para siempre, todos los días. Tú y yo… todos los días.', 33, 22), 
+('Lo esencial es no perder la orientación.', 33, 22), 
+('Había perdido en la espera la fuerza de los muslos, la dureza de los senos, el hábito de la ternura, pero conservaba intacta la locura del corazón.', 33, 22), 
+('Llegaron a sospechar que el amor podía ser un sentimiento más reposado y profundo que la felicidad desaforada pero momentánea de sus noches secretas.', 33, 22), 
+('Se sintió olvidado, no con el olvido remediable del corazón, sino con otro olvido más cruel e irrevocable que él conocía muy bien, porque era el olvido de la muerte.', 33, 22),
+('Tenía la rara virtud de no existir por completo sino en el momento oportuno.', 33, 22), 
+('Extraviado en la soledad de su inmenso poder, empezó a perder el rumbo', 33, 22),
+('El secreto de una buena vejez no es otra cosa que un pacto honrado con la soledad.', 33, 22),
+('Optaron por no volver al cine, considerando que ya tenían bastante con sus propias penas para llorar por fingidas desventuras de seres imaginarios.', 33, 22),
+('Uno no se muere cuando debe, sino cuando puede', 33, 22);
+
+-----------
+
+
+
+
+
 
 

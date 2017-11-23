@@ -5,8 +5,8 @@
 	<title>Frases de libros</title>
 
 	<?php require 'links.php';
-		  require 'conexion.php';
-		  
+		  //require 'conexion.php';
+		  require 'common.php';		  
 	?>
 </head>
 <body>
@@ -18,15 +18,16 @@
 		<b class="third-title">Libro: </b>
 	
 	<?php 	
-		nombre_libro();
+		$database->imprime_titulo_libros();
 	 ?>
 		
 	</p>
 	
 	<?php 
-		imprime_frase_idlibro();
+		$database->imprime_frases_libros();
 		require 'prologos.php';
-		imprime_prologo_libro();
+		$database->imprime_prologo_libro();
+		$database->imprime_imagen_libro()
 	 ?>
 
 </body>

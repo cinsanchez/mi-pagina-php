@@ -3,7 +3,8 @@
 
 	<?php  	
 		imprime_letras('filosofos');
-		 require 'conexion.php';	 
+		 //require 'conexion.php';
+		 //require 'common.php';	 
 	?>
 
 	<br>
@@ -11,9 +12,8 @@
 
 	<ol class="lista-filosofos">	
 	<?php 
- 		$letra = 'a';
-	
-		imprime_nombre_autores();
+ 		//$letra = 'a';
+		$database->nombre_filosofos_autores_letra();
 	?>	
 	</ol>
 

@@ -6,7 +6,8 @@
 
 	<?php 
 		require 'links.php';
-		require 'conexion.php';
+		//require 'conexion.php';
+		require 'common.php';
 	?>
 
 </head>

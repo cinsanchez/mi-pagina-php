@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Frases de filosofos </title>
 
-	<?php require 'links.php';
-		  require 'conexion.php';
-		  
+	<?php 
+		require 'links.php';
+		//require 'conexion.php';  
+		require 'common.php';
 	?>
 
 </head>
@@ -16,17 +17,16 @@
 	?>
 
 	<p class="titles"> 
-		<b class="third-title">Filosofo: </b>
+	<b class="third-title">Filosofo: </b>
 
 	<?php 	
-		imprime_titulo_autor();
+		$database->imprime_nombre_autor();
 	 ?>
 
 	</p>
 
 	<?php
-		imprime_frase_libro();
-		
+		$database->imprime_frases_autores();
 	?>
 	
 		<p class="titles"> 
@@ -34,7 +34,7 @@
 		</p>
 
 	<?php
-		imprime_imagen_libro();
+		$database->imprime_imagen_libro_filosofo();
 	 ?>
 
 	<?php require 'footer.php'; ?>

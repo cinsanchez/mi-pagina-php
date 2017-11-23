@@ -5,7 +5,10 @@
 	<title>Frases por filosofos</title>
 
 
-	<?php require 'links.php';?>
+	<?php require 'links.php';
+		  require 'common.php';
+	?>
+	
 
 </head>
 <body>
