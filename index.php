@@ -13,15 +13,21 @@
 </head>
 
 <body>
-	<?php require 'menu.php';?>
-
-	<?php require 'titulos.php';?>
+	<?php require 'menu.php';
+		  require 'titulos.php';?>
 	
 
 	<p class="frase-dia">
 	<b>Frase del día</b>
 	<br>
-	<?php  $database->frase_del_dia();?>
+	<?php
+	  $frases = $frases_model->getFrase();	  
+	 ?>
+
+	<?php foreach($frases as $frase): ?>
+		 <p class='frase-dia'><?= $frase['frase_desc']; ?></p>
+	<?php endforeach; ?>
+
 	<br>
 	<br>
 

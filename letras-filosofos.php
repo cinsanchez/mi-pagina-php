@@ -4,17 +4,31 @@
 	<?php  	
 		imprime_letras('filosofos');
 		 //require 'conexion.php';
-		 //require 'common.php';	 
+			 
 	?>
 
 	<br>
 	<br>
+	<?php 
+		$filosofos=[];
+		if(isset($_GET['letra'])) {
+				$letra = $_GET['letra'];
+				$filosofos = $filosofos_model->getFilosofoByLetra($_GET['letra']);
+			}
+	?>	
 
 	<ol class="lista-filosofos">	
-	<?php 
- 		//$letra = 'a';
-		$database->nombre_filosofos_autores_letra();
-	?>	
+	<?php foreach ($filosofos as $filosofo): ?> 
+		<li>
+			<a href="filosofo.php?id=<?= $filosofo['id_autor'];?>">
+				<?= $filosofo['nombre_autor'];?>
+			</a>
+		</li>
+
+	<?php endforeach; ?>
+	
+
+
 	</ol>
 
 

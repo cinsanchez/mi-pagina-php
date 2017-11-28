@@ -13,11 +13,10 @@
 </head>
 <body>
 	<?php require 'menu.php';?>
-
 	<?php require 'letras-libros.php';?>
 
 	<div style="clear:both"></div>
-	
+
 	<?php require 'footer.php';?>
 
 </body>
