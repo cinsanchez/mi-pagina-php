@@ -1,12 +1,23 @@
 <?php 
 	$config = require 'config.php';
+	require 'funciones.php';
 	
 	function cargarModelos($clase)
 	{
-		require 'modelos/'.$clase.'.php';
+		if (file_exists('modelos/'.$clase.'.php')) {
+			require 'modelos/'.$clase.'.php'; 
+		}	
+	}
+
+	function cargarClases($clase)
+	{
+		if (file_exists('controladores/'.$clase.'.php')) {
+			require 'controladores/'.$clase.'.php';
+		}
 	}
 
 	spl_autoload_register('cargarModelos');
+	spl_autoload_register('cargarClases');
 
 	$database = new BaseDatos($config);
 

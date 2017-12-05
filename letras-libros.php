@@ -7,17 +7,10 @@
 	<br>
 	<br>
 
-	<?php 
-		$libros = [];
-		if (isset($_GET['letra'])) {
-			$libros = $libros_model->getTituloByLetra($_GET['letra']);
-		}
-	?>
-
 	<ol class="lista-libros">
 		<?php foreach($libros as $libro): ?>
 			<li>
-				<a href="libro.php?id=<?= $libro['id_libros']; ?>">
+				<a href="index.php?controller=libros&id=<?= $libro['id_libros']; ?>">
 					<?= $libro['nombre_libros']; ?>
 				</a>
 			</li>

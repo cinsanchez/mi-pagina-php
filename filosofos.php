@@ -5,17 +5,16 @@
 	<title>Frases por filosofos</title>
 
 
-	<?php require 'links.php';
-		  require 'common.php';
+	<?php 
+		require 'links.php';
+		require 'common.php';
 	?>
 	
 
 </head>
 <body>
 	<?php require 'menu.php';?>
-	
-	<?php require 'letras-filosofos.php';
-	?>
+	<?php require 'letras-filosofos.php';?>
 
 	<div style="clear:both"></div>
 
