@@ -1,5 +1,5 @@
 <?php 
-	$config = require 'config.php';
+	$config = require 'bootstrap/config.php';
 	require 'funciones.php';
 	
 	function cargarModelos($clase)

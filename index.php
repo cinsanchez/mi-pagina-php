@@ -1,6 +1,6 @@
 <?php 
 		require 'vistas/LinksVista.php';
-		require 'common.php';
+		require 'bootstrap/common.php';
 		
 		if (!isset($_GET['controller'])) {
 			$clase_bienvenida = new BienvenidaController($frases_model);
