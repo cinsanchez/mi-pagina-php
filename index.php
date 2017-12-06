@@ -1,5 +1,5 @@
 <?php 
-		require 'links.php';
+		require 'vistas/LinksVista.php';
 		require 'common.php';
 		
 		if (!isset($_GET['controller'])) {

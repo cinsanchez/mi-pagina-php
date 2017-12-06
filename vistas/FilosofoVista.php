@@ -7,7 +7,7 @@
 	
 </head>
 <body>
-	<?php require 'menu.php';
+	<?php require 'vistas/MenuVista.php';
 		
 	?>
 
@@ -37,7 +37,7 @@
 		</div>
 	 <?php endforeach; ?>
 
-	<?php require 'footer.php'; ?>
+	<?php require 'vistas/FooterVista.php'; ?>
 
 </body>
 </html>

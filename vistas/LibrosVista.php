@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Frases de libros</title>
 
-	<?php require 'links.php';?>
+	<?php require 'vistas/LinksVista.php';?>
 
 </head>
 <body>
-	<?php require 'menu.php';
+	<?php require 'vistas/MenuVista.php';
 	?>
 
 	<p class="titles">
@@ -25,7 +25,7 @@
 		<div class="phrase"><?=$frase_libro['frase_desc'];?></div>
 	 <?php endforeach; ?>	
 
-	<?php require 'prologos.php';?>	
+	<?php require 'vistas/PrologoVista.php';?>	
 
 	<?php foreach($prologo_libros as $prologo_libro): ?>
 		<p><?=$prologo_libro['epilogo'];?></p>
@@ -37,7 +37,7 @@
 		</div>
 	<?php endforeach; ?>
 
-	<?php require 'footer.php'; ?>
+	<?php require 'vistas/FooterVista.php'; ?>
 
 </body>
 </html>

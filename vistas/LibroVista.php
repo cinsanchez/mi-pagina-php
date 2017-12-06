@@ -3,17 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Frases de libros </title>
+
+	<?php 
+		require 'vistas/LinksVista.php';
+	?>
+
 </head>
 <body>
-	<?php require 'menu.php';
-		  require 'letras-libros.php'; 
+	<?php require 'vistas/MenuVista.php';
+		  require 'vistas/Letras-LibrosVista.php'; 
 	?>
-	
+
 	<br>
 	<br>
 
+	<div style="clear:both"></div>
 
-		<?php require 'footer.php'; ?>
+	<?php require 'vistas/FooterVista.php'; ?>
 		
 	</ol>
 	</div>

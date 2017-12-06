@@ -5,15 +5,15 @@
 <meta charset="utf-8">
 <title>Una gran prueba</title>
 
-	<?php require 'links.php';
+	<?php require 'vistas/LinksVista.php';
 		  //require 'conexion.php';
 	?>
 
 </head>
 
 <body>
-	<?php require 'menu.php';
-		  require 'titulos.php';?>
+	<?php require 'vistas/MenuVista.php';
+		  require 'vistas/TitulosVista.php';?>
 	
 
 	<p class="frase-dia">
@@ -23,6 +23,8 @@
 	<?php foreach($frases as $frase): ?>
 		 <p class='frase-dia'><?= $frase['frase_desc']; ?></p>
 	<?php endforeach; ?>
+
+	<?php require 'vistas/FooterVista.php'; ?>
 
 	<br>
 	<br>
