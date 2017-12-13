@@ -1,0 +1,9 @@
+{
+    "name": "vendor/cintia",
+    "description": "Paquete para mi pagina de frases de filosofos y libros",
+    "require": {
+        "symfony/dotenv": "^4.0",
+        "slim/slim": "^3.0",
+        "slim/php-view": "^2.2"
+    }
+}

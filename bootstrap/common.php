@@ -1,4 +1,5 @@
 <?php 
+
 	$config = require 'bootstrap/config.php';
 	require 'funciones.php';
 	

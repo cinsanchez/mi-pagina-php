@@ -9,7 +9,7 @@
 		private $conexion;
 		
 		public function __construct($config)
-		{
+		{	
 			$this->conexion = mysqli_connect($config[0], $config[1], $config[2], $config[3]);
 		}
 
